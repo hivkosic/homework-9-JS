@@ -1,0 +1,8 @@
+{
+    "Pozdrav svima, mi smo studenti!":"hello_world" ,
+    "Za praznike smo dobili domaci.":"winter_assignment",
+    "Prvi tjedan smo odmarali.": "first_week",
+    "Drugi tjedan smo radili.":"second_week" ,
+    "Svi koji su uspjesno rjesili su odmarali i dalje.": "success_result",
+    "Oni koji nisu uspjesno rjesili radili su vise." : "fail_result"   
+}
