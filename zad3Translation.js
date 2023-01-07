@@ -18,6 +18,8 @@ sa prethodno navedenim hrvatskim recenicama.
 */
 
 
+/* 1. način
+
 function translate (key){
     if (locale==="en") {
         return english[key];
@@ -29,7 +31,6 @@ function translate (key){
 
     return croatian [key];
 }
-
 
 const croatian = {
     "hello_world": "Pozdrav svima, mi smo studenti!",
@@ -51,6 +52,31 @@ const english = {
 
 
 const locale = process.argv[2] || "hr";
+console.log("pozdrav:", translate("hello_world"));
+console.log("zimski zadatak:", translate("winter_assignment"));
+console.log("prvi tjedan:", translate("first_week"));
+console.log("drugi tjedan:", translate("second_week"));
+console.log("dobar rezultat:", translate("success_result"));
+console.log("loš rezultat:", translate("fail_result"));
+
+*/
+
+// 2. način
+
+function translate (key){
+    const locale = process.argv[2] || "hr";
+
+const TRANSLATION = {
+    en: require ("./i18n/en.json"),
+    hr: require ("./i18n/hr.json"),
+}
+const translation = TRANSLATION[locale] || TRANSLATION.hr;
+
+    return translation[key];
+}
+
+
+
 console.log("pozdrav:", translate("hello_world"));
 console.log("zimski zadatak:", translate("winter_assignment"));
 console.log("prvi tjedan:", translate("first_week"));
