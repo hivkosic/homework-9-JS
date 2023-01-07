@@ -17,7 +17,6 @@ zamjeniti sa engleskim recenicama. Ukoliko je jezik hr ili bilo koji drugi, funk
 sa prethodno navedenim hrvatskim recenicama.
 */
 
-
 /* 1. način
 
 function translate (key){
@@ -63,19 +62,18 @@ console.log("loš rezultat:", translate("fail_result"));
 
 // 2. način
 
-function translate (key){
-    const locale = process.argv[2] || "hr";
+function translate(key) {
+  const locale = process.argv[2] || "hr";
 
-const TRANSLATION = {
-    en: require ("./i18n/en.json"),
-    hr: require ("./i18n/hr.json"),
+  const TRANSLATION = {
+    en: require("./i18n/en.json"),
+    hr: require("./i18n/hr.json"),
+  };
+  const translation = TRANSLATION[locale] || TRANSLATION.hr;
+
+  return translation[key] ||"ERROR: UNDEFINED TOKEN";
+  
 }
-const translation = TRANSLATION[locale] || TRANSLATION.hr;
-
-    return translation[key];
-}
-
-
 
 console.log("pozdrav:", translate("hello_world"));
 console.log("zimski zadatak:", translate("winter_assignment"));
@@ -83,3 +81,4 @@ console.log("prvi tjedan:", translate("first_week"));
 console.log("drugi tjedan:", translate("second_week"));
 console.log("dobar rezultat:", translate("success_result"));
 console.log("loš rezultat:", translate("fail_result"));
+console.log("nepoznat token", translate());

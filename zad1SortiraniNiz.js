@@ -29,7 +29,7 @@ for (let i = 0; i < 5; i++) {
 console.log(arr);
 console.log("broj iteracija:", numbIter);
 
-//Broj iteracija = (arr.length-1)*(arr.length - 1) ?????
+//Broj iteracija = (arr.length-1)*(arr.length - 1) ????? Jel to?
 */
 
 
