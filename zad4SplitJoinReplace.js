@@ -12,3 +12,16 @@ Primjer:
 Input: 'Hello world. Forth task is easy. Give me more.'
 Output: '1. sentence length is 10. 2. sentence length is 15. 3. sentence length is 10. '
  */
+
+
+function sentence(arr) {
+  const replArr = arr.replaceAll(" ", "");
+  const splArr = replArr.split(".");
+  const filtArr = splArr.filter(item => item.length>0);
+  const mapArr = filtArr.map((item, index) => `${index + 1}. sentence length is ${item.length}`);
+  const joinArr = mapArr.join(". ");
+  return joinArr;
+  }
+  
+const str = "Hello world. Forth task is easy. Give me more.";
+console.log(sentence(str));
