@@ -8,3 +8,17 @@ Primjer:
 Input: [{name: 'banane', price:20}, {name: 'jagode', price:30}, {name: 'jabuke', quantity:15}]
 Output: [{name: 'jagode', price:30}, {name: 'banane', price:20}, {name: 'jabuke', quantity:15}]
 */
+
+function sortFruit(arr) {
+    const fruitArr = arr.sort((a,b) => b.price - a.price);
+  return fruitArr;
+}
+
+
+const fruit = [ 
+  { name: "banane", price: 20 },
+  { name: "jagode", price: 30 },
+  { name: "jabuke", price: 15 },
+];
+
+console.log(sortFruit(fruit));
